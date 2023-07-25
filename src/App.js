@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import First from "./Components/First";
+import Last from "./Components/Last";
+import Middle from "./Components/Middle.jsx";
+
+import SideBAr from "./Components/SideBAr";
+
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div style={{ width: "100%", height: "100vh", display: "flex" }}>
+      <div style={{ width: "4%" }}>
+        <SideBAr />
+      </div>
+      <div style={{ width: "20%" }}>
+        <First />
+      </div>
+
+      <div
+        style={{
+          width: "76%",
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
+        <div style={{ width: "57%", height: "60%" }}>
+          <Middle />
+        </div>
+        <div
+          style={{
+            width: "20%",
+            height: "100%",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <Last />
+        </div>
+      </div>
     </div>
   );
 }
